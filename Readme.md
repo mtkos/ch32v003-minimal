@@ -11,7 +11,7 @@ to some choices which would be impractical on a larger scale. For instance, the 
 to which it belongs. So CTLR instead of RCC\_CTLR. But there is also WWDG\_CTLR and FLASH\_CTLR. This works because I only use the first of these.
 
 Interestingly, the resulting binaries
-are quite small: only 112 byte for a program which blinks a LED, and even 66 bytes if compressed instructions are allowed. This is only a little more than the size obtained when writing
+are quite small: only 112 byte for a program which blinks a LED, and even 80 bytes if compressed instructions are allowed. This is only a little more than the size obtained when writing
 the program in assembly (50 bytes), and certainly a lot less than what you get from toolchains like MounRiver Studio.
 
 ### Remarks
