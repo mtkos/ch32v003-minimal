@@ -6,7 +6,7 @@
 .section .init
   j      Reset_Handler
 .skip    4*(TIM1_UP_IRQn - 1)
-.word    TIM1_CC_IRQHandler
+.word    TIM1_UP_IRQHandler
 
 Reset_Handler:
   la sp, _estack

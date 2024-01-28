@@ -14,9 +14,9 @@
 #define CNT_MAX 0xffff
 #define PRESCALER_VALUE (CPU_FREQ/CNT_MAX - 1)
 
-void TIM1_CC_IRQHandler() __attribute__((interrupt));
+void TIM1_UP_IRQHandler() __attribute__((interrupt));
 
-void TIM1_CC_IRQHandler(){
+void TIM1_UP_IRQHandler(){
 }
 
 void prog(){
