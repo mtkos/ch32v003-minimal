@@ -16,8 +16,6 @@ the program in assembly (50 bytes), and certainly a lot less than what you get f
 
 ### Remarks
 
-No attempt has been made to use external libraries, notably Newlib.
-
 The following documentation has been used:
 
 [QingKeV2] The QingKeV2 Microprocessor Manual, can be obtained from <https://www.wch-ic.com/downloads/file/369.html>.
@@ -30,6 +28,8 @@ The following documentation has been used:
 [As] [The GNU Assembler manual](https://ftp.gnu.org/old-gnu/Manuals/gas-2.9.1/html_chapter/as_toc.html).
 
 [GNU-linker] [The GNU linker](https://ftp.gnu.org/old-gnu/Manuals/ld-2.9.1/html_chapter/ld_toc.html), especially the Command Language chapter.
+
+[Picolibc] [Picolibc](https://github.com/picolibc/picolibc)
 
 Apart from these, a little knowledge of the C programming language is needed.
 
@@ -56,9 +56,13 @@ power mode. The interrupt routine does nothing, it only wakes up the MCU. Everyt
 
 8. timer-interrupt The same as 5. and 6., but now using one of the timer peripherals. It uses the 'update' interrupt, triggered when the timer counter overflows.
 
+9. picolibc-example Shows how to use the picolibc library. Using it you can have stdio functionality like printf in your programs and use mathematical functions like sin and cos, among other
+things.
+
 ### Prerequisites
 
-You will need a compiler: Debian packages gcc-riscv64-unknown-elf and binutils-riscv64-unknown-elf. And the GNU make utility, Debian package 'make'. 
+You will need a compiler: Debian packages gcc-riscv64-unknown-elf and binutils-riscv64-unknown-elf. And the GNU make utility, Debian package 'make'. To use the picolibc library Debian offers a
+prebuilt version in package picolibc-riscv64-unknown-elf.
 
 To run the programs you need to upload them to the MCU. You can use the loader you like. I use the WCH-LinkE debugger/uploader, together with the openocd version from the MounRiver 
 Toolchain & Debugger \(<http://www.mounriver.com/download>\). For copyright reasons I have not included MounRiver files here. Look for the file named openocd, and copy it to the dummy openocd 
