@@ -1,8 +1,10 @@
+#define TIM2 0x40000000
 #define TIM1 0x40012C00
 #define   CTLR1 0x0
 #define     ARPE 1<<7
 #define     CEN 1<<0
 #define   DMAINTENR 0xc
+#define     UDE 1<<8
 #define     CC4IE 1<<4
 #define     CC3IE 1<<3
 #define     CC2IE 1<<2
@@ -18,8 +20,8 @@
 #define    OC3PE 1<<3
 #define   CCER 0x20
 #define     CC3E 1<<8
-#define   ATRLR 0x2c
 #define   PSC 0x28
+#define   ATRLR 0x2c
 #define   CH3CVR 0x3c
 #define   BDTR 0x44
 #define     MOE 1<<15

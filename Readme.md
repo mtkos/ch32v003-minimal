@@ -59,6 +59,8 @@ power mode. The interrupt routine does nothing, it only wakes up the MCU. Everyt
 9. picolibc-example Shows how to use the picolibc library. Using it you can have stdio functionality like printf in your programs and use mathematical functions like sin and cos, among other
 things.
 
+10. ws2812d uses the DMA controller and PWM to control a chain of ws2812d LEDs.
+
 ### Prerequisites
 
 You will need a compiler: Debian packages gcc-riscv64-unknown-elf and binutils-riscv64-unknown-elf. And the GNU make utility, Debian package 'make'. To use the picolibc library Debian offers a

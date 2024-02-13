@@ -6,10 +6,13 @@
 #define     HPRE_Reset_Mask 0xFFFFFF0F
 #define     HPRE_DIV1 0
 #define     SW_PLL 0x2
+#define   AHBPCENR 0x14
+#define     DMA1EN 1<<0
 #define   APB2PCENR 0x18
 #define     USART1EN 1<<14
 #define     TIM1EN 1<<11
 #define     IOPDEN 1<<5
 #define     IOPCEN 1<<4
 #define     AFIOEN 1<<0
-
+#define   APB1PCENR 0x1c
+#define     TIM2EN 1<<0
