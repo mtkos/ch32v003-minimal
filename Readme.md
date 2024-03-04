@@ -3,10 +3,10 @@
 When starting with microcontrollers it is quite easy to get overwhelmed by the accompanying software. Thousands of lines of code: makefiles, 
 linker scripts, assembly startup code, vector tables .... Trying to understand them I wrote a series of toy programs, which, I hope, show that all of these are quite
 well documented and not that complicated to understand. I added a lot of explanation, hoping that it may be useful for those who
-have the questions I had. The microprocessor I used is the fairly new ch32v003 RISC-V MCU. No software other than the GNU compiler and binutils has been used, except for the last
+have the questions I had. The microprocessor I used is the fairly new ch32v003 RISC-V MCU. No software other than the GNU compiler and binutils has been used, except for one
 program, which also uses picolibc.
 
-Everything has been tested on Debian 12 (bookworm, GCC 12.2) and Debian 13 (trixie, GCC 12.2). The programs have been 'optimized' for ease of understanding and reading. This has led
+Everything has been tested on Debian 12 (bookworm, GCC 12.2) and Debian 13 (trixie, GCC 13.2). The programs have been 'optimized' for ease of understanding and reading. This has led
 to some choices which would be impractical on a larger scale. For instance, the names of peripheral registers are those of the MPU manual, without the prefix denoting the peripheral
 to which it belongs. So CTLR instead of RCC\_CTLR. But there is also WWDG\_CTLR and FLASH\_CTLR. This works because I only use the first of these.
 
