@@ -54,7 +54,9 @@ power mode. The interrupt routine does nothing, it only wakes up the MCU. Everyt
 
 7. timer A program that uses the timer peripheral to blink a LED. It shows how the timer keeps running while the CPU goes to sleep.
 
-8. timer-interrupt The same as 5. and 6., but now using one of the timer peripherals. It uses the 'update' interrupt, triggered when the timer counter overflows.
+8. timer-interrupt The same as 5. and 6., but now using one of the timer peripherals. It uses the 'update' interrupt, triggered when the timer counter overflows. When, like in this case,
+you only use one or two interrupt sources, you can do without a vector table. Instead, you can use the 'vector table free interrupt response mechanism', documented in [QingKeV2], chapter 3.
+You just have to configure the PFIC\_VTFIDR and PFIC\_VTFADDRRx registers. If you look at the startup code, you will see that it does not populate a vector table.
 
 9. picolibc-example Shows how to use the picolibc library. Using it you can have stdio functionality like printf in your programs and use mathematical functions like sin and cos, among other
 things.

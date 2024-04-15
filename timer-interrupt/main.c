@@ -30,6 +30,8 @@ void prog(){
 
     REG(TIM1 + DMAINTENR) = UIE;
     REG(PFIC + IENR1) = (1<<(TIM1_UP_IRQn % 32));
+    REG(PFIC + VTFIDR) = TIM1_UP_IRQn;
+    REG(PFIC + VTFADDRR0) = (uint32_t)TIM1_UP_IRQHandler + 1;
 
     REG(TIM1 + CTLR1) = CEN;
 
