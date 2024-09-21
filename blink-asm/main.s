@@ -5,7 +5,7 @@
 .set CFGLR, 0x0
 .set OUTDR, 0xc
 .set PIN, 3
-.set PIN_Clear, (~(0xf))<<(4*PIN)
+.set PIN_Clear, ~((0xf)<<(4*PIN))
 .set ResetValue, 0x44444444
 .set Pin_Output_PP_2MHz, 0x2<<(4*PIN)
 
