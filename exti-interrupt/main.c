@@ -20,6 +20,7 @@ extern uint32_t _sidata, _sdata, _edata, _ebss, _sbss;
 void EXTI7_0_IRQHandler() __attribute__((interrupt));
 
 void EXTI7_0_IRQHandler(){
+    REG(EXTI + INTFR) = Pin(PIN1);
 }
 
 void flash_to_ram(){
@@ -39,6 +40,7 @@ void prog(){
 
     REG(GPIOC + CFGLR) &= Clear(PIN1);
     REG(GPIOC + CFGLR) |= Input_PUPD(PIN1);
+    REG(GPIOC + OUTDR) = Pin(PIN1);
 
     REG(GPIOC + CFGLR) &= Clear(PIN3);
     REG(GPIOC + CFGLR) |= Output_PP_2MHz(PIN3);
@@ -54,7 +56,6 @@ void prog(){
 
     while(1){
         __asm__ volatile("wfi");
-        REG(EXTI + INTFR) = Pin(PIN1);
         REG(GPIOC + BSHR) = Pin(PIN3 + 16*onoff[0]);
         onoff[0] = 1 - onoff[0];
         REG(GPIOC + BSHR) = Pin(PIN5 + 16*onoff[1]);
